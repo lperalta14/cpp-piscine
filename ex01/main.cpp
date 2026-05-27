@@ -10,7 +10,7 @@ int main()
 			phonebook.addContact(this.contacts);
 		else if (!strncmp(argumento, "SEARCH"))
 			phonebook.searchContact();
-		else
+		else if
 			return (1);
 	}
 	return (0);

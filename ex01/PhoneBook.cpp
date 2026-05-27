@@ -10,7 +10,11 @@ static std::string getInput(const std::string& prompt)
 	while(input.empty())
 	{
 		std::cout << prompt << std::endl;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << std::endl;
+			exit(0);
+		}
 	}
 	return input;
 }
@@ -28,5 +32,15 @@ void PhoneBook::addContact()
 	_count++;
 }
 
+void PhoneBook::searchContact()
+{
+	int limit = (_count < 8) ? _count : 8;
+
+	for (int i = 0; i < limit; i++)
+	{
+		std::cout << std::right << std::setw(10) << std::substr(_contacts[i].getName()) << "|";
+		std::cout << std::right << std::setw(10) << _contacts[i].getLastName() << "|";
+	}
+}
 
 PhoneBook::~PhoneBook(){}
