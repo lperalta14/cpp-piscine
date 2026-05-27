@@ -42,5 +42,16 @@ void PhoneBook::searchContact()
 		std::cout << std::right << std::setw(10) << _contacts[i].getLastName() << "|";
 	}
 }
-
+Vas bien con la estructura, pero std::substr no existe — substr es un método de std::string, no de std. Se llama así:
+cpp_contacts[i].getName().substr(0, 9)
+Pero recuerda que substr solo lo usas si el string tiene más de 10 caracteres — si no, lo imprimes tal cual. Esa es la lógica de truncado que te mencioné antes.
+Te propongo hacer una función estática auxiliar, igual que hiciste con getInput:
+cppstatic std::string truncate(const std::string& str)
+{
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return str;
+}
+¿Lo entiendes? Si el string tiene más de 10 caracteres, devuelve los primeros 9 más un . — total 10. Si no, lo devuelve tal cual.
+Añade esa función y úsala en el std::cout. ¿Cómo quedaría la línea del nombre usando truncate?
 PhoneBook::~PhoneBook(){}
