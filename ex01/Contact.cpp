@@ -4,51 +4,51 @@ Contact::Contact(){}
 
 std::string Contact::getName()
 {
-	return (name);
+	return (_name);
 }
 
 std::string Contact::getLastName()
 {
-	return lastname;
+	return _lastName;
 }
 
 std::string Contact::getNickName()
 {
-	return nickname;
+	return _nickName;
 }
 
 std::string Contact::getPhoneNumber()
 {
-	return phonenumber;
+	return _phoneNumber;
 }
 
 std::string Contact::getDarkestSecret()
 {
-	return darkestsecret;
+	return _darkestSecret;
 }
 void Contact::setName(const std::string& name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
 void Contact::setLastName(const std::string& lastname)
 {
-	this->lastname = lastname;
+	this->_lastName = lastname;
 }
 
 void Contact::setNickName(const std::string& nickname)
 {
-	this->nickname = nickname;
+	this->_nickName = nickname;
 }
 
 void Contact::setPhoneNumber(const std::string& phonenumber)
 {
-	this->phonenumber = phonenumber;
+	this->_phoneNumber = phonenumber;
 }
 
 void Contact::setDarkestSecret(const std::string& darkestsecret)
 {
-	this->darkestsecret = darkestsecret;
+	this->_darkestSecret = darkestsecret;
 }
 
 Contact::~Contact(){}
