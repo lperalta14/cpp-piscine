@@ -1,7 +1,7 @@
-NAME = LoverBoy
+NAME = benidorm
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = Contact.cpp PhoneBook.cpp main.cpp
+SRC = 
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
