@@ -1,7 +1,7 @@
 NAME = benidorm
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = 
+SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
