@@ -1,7 +1,7 @@
-NAME = MoarBrainz
+NAME = Brain
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
