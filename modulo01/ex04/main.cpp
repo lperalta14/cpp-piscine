@@ -1,28 +1,53 @@
 #include <iostream>
 #include <fstream>
 #include <string>
- 
-// TODO: comprobar argc == 4 (programa + filename + s1 + s2)
- 
-// TODO: abrir filename con std::ifstream
-// TODO: comprobar que el stream abrió bien
- 
-// TODO: leer todo el contenido del archivo a un std::string
-//       (pista: std::getline en bucle, o leer el stream completo
-//        con un std::ostringstream como "buffer")
- 
-// TODO: recorrer el contenido buscando cada aparición de s1
-//       (pista: std::string::find devuelve la posición o std::string::npos)
-//       construir el string resultado trozo a trozo con substr() + s2
- 
-// TODO: abrir <filename>.replace con std::ofstream y escribir el resultado
- 
+#include <sstream>
+
+std::string replaceAll(
+	const std::string& content,
+	const std::string& s1,
+	const std::string& s2)
+{
+	size_t start = 0;
+	size_t pos;
+	std::string result;
+	while ((pos = content.find(s1, start)) != std::string::npos)
+	{
+
+		result += content.substr(start, pos - start) + s2;
+		start = pos + s1.length();
+	}
+
+	result += content.substr(start);
+	return (result);
+}
+
 int main(int argc, char **argv)
 {
-	if (argc == 4)
+	if (argc != 4)
 	{
-		std::ifstream(argv[1]);
+		std::cerr << "Usage: ./replace <file> <s1> <s2>" << std::endl;
+		return (1);
 	}
-	
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+	std::ifstream infile(argv[1]);
+	if (!infile || s1.empty())
+	{
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	std::stringstream buffer;
+	buffer << infile.rdbuf();
+	std::string content = buffer.str();
+	std::string result = replaceAll(content, s1, s2);
+	std::string filename = std::string(argv[1]) + ".replace";
+	std::ofstream outfile(filename.c_str());
+	if (!outfile)
+	{
+		std::cerr << "Error creating output file" << std::endl;
+		return (1);
+	}
+	outfile << result;
 	return (0);
 }
