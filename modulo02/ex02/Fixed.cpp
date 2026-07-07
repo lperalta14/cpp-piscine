@@ -113,7 +113,7 @@ Fixed Fixed::operator+(const Fixed& other) const
 
 Fixed Fixed::operator-(const Fixed& other) const
 {
-	Fixed (result);
+	Fixed result;
 
 	result.setRawBits(_fixedPointValue - other._fixedPointValue);
 	return (result);
