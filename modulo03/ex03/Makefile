@@ -1,6 +1,6 @@
 NAME = Diamond
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wshadow -Wall -Wextra -Werror -std=c++98 
 SRC =  main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
