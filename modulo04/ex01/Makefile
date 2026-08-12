@@ -1,7 +1,7 @@
 NAME = Animals
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC =  main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC =  main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
 
