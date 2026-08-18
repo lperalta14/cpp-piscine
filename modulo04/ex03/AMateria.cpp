@@ -8,6 +8,7 @@ AMateria::AMateria(const AMateria& other) : _type(other._type)
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
+    (void)other;
     return(*this);
 }
 
@@ -20,3 +21,5 @@ std::string const & AMateria::getType() const
 {
     return(this->_type);
 }
+
+AMateria::~AMateria(){}

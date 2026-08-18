@@ -1,7 +1,7 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
     std::cout << "Cure constructed" << std::endl;
 }
