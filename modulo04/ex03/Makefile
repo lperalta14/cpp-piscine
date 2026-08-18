@@ -9,7 +9,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
-%.o : %.cpp
+%.o : %.cpp 
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 clean: 
 	rm -f *.o
