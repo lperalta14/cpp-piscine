@@ -5,7 +5,7 @@ Form::Form() : _name("Default"),_signed(0), _gradeSign(1), _gradeExe(1)
 {
 }
 
-Form::Form(const std::string& name, int gradeSign, int gradeExe) : _name(name), _gradeSign(gradeSign), _gradeExe(gradeExe), _signed(0)
+Form::Form(const std::string& name, int gradeSign, int gradeExe) : _name(name), _signed(false), _gradeSign(gradeSign), _gradeExe(gradeExe)
 {
     if (this->_gradeSign < 1 || this->_gradeExe <1)
         throw GradeTooHighException();
@@ -13,7 +13,7 @@ Form::Form(const std::string& name, int gradeSign, int gradeExe) : _name(name), 
         throw GradeTooLowException();
 }
 
-Form::Form(const Form& other) : _name(other._name), _gradeSign(other._gradeSign), _gradeExe(other._gradeExe), _signed(other._signed)
+Form::Form(const Form& other) : _name(other._name), _signed(other._signed), _gradeSign(other._gradeSign), _gradeExe(other._gradeExe)
 { 
 }
 
