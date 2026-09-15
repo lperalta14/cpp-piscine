@@ -3,6 +3,8 @@
 # include <string>
 # include <iostream>
 
+class Bureaucrat;
+
 class Form
 {
 private:
@@ -21,6 +23,8 @@ public:
 	bool		getSigned() const;
 	int			getGradeSign() const;
 	int			getGradeExe() const;
+	
+	void		beSigned(Bureaucrat const &bureaucra);
 
 	class GradeTooHighException : public std::exception
 	{
