@@ -1,7 +1,7 @@
-NAME = 
+NAME = Bureaucrat
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC =  main.cpp 
+SRC =  main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 .PHONY: all clean fclean re
