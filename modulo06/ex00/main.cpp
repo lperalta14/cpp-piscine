@@ -28,7 +28,7 @@ int main(void)
 	std::cout << "\n===== FLOAT =====" << std::endl;
 	ScalarConverter::convert("0.0f");
 	ScalarConverter::convert("42.0f");
-	ScalarConverter::convert("-42.5f");
+	ScalarConverter::convert("42.5f");
 	ScalarConverter::convert("4.2f");
 	ScalarConverter::convert(".5f");
 	ScalarConverter::convert("5.f");

@@ -42,12 +42,6 @@ void    Bureaucrat::incrementGrade()
 
 void    Bureaucrat::decrementGrade()
 {
-    /*int newGrade = this->_grade;
-    if (++newGrade <= 150)
-        this->_grade = newGrade;
-    else
-        throw GradeTooLowException();
-    */
     if (this->_grade == 150)
         throw GradeTooLowException();
     this->_grade++;

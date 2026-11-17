@@ -27,8 +27,8 @@ int main()
         junior.executeForm(shrubbery);
 
         std::cout << "\n--- Sign and execute shrubbery ---" << std::endl;
-        junior.signForm(shrubbery);
-        junior.executeForm(shrubbery);
+        chief.signForm(shrubbery);
+        chief.executeForm(shrubbery);
 
         std::cout << "\n--- Robotomy ---" << std::endl;
         chief.signForm(robotomy);
